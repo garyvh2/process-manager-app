@@ -2,10 +2,9 @@ import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
 import { UsersComponent } from './pages/Users/users.component';
 
-// >> Routes
 export const MAP_ROUTES: Routes = [
-    { path: 'Users', component: UsersComponent }
-]
+    { path: '', component: UsersComponent }
+];
 
 @NgModule({
   imports: [

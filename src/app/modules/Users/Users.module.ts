@@ -6,8 +6,8 @@ import { UsersRouterModule } from './Users.router';
 
 @NgModule({
   imports: [
-    CommonModule,
-    UsersRouterModule
+    UsersRouterModule,
+    CommonModule
   ],
   declarations: [
     UsersComponent

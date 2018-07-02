@@ -1,5 +1,5 @@
-import { Task } from "./Task";
-import { User } from "./user";
+import { Task } from './Task';
+import { User } from './user';
 
 export class Process {
     constructor (

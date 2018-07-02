@@ -3,8 +3,8 @@ import { RouterModule, Routes } from '@angular/router';
 
 // >> Routes
 export const MAP_ROUTES: Routes = [
-    { path: 'users', loadChildren: 'app/modules/Users/Users.router#UsersRouterModule'},
-]
+    { path: 'Users', loadChildren: './modules/Users/Users.router#UsersRouterModule'},
+];
 
 @NgModule({
   imports: [
