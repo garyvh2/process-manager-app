@@ -1,4 +1,4 @@
-import { User } from "./user";
+import { User } from "./User";
 import { Task } from "./Task";
 
 export class ProcessHistory {
