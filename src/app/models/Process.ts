@@ -1,5 +1,5 @@
 import { Task } from './Task';
-import { User } from './user';
+import { User } from './User';
 import { BaseEntity } from './interface/BaseEntity';
 
 export class Process extends BaseEntity {

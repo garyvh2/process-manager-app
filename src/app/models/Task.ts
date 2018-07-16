@@ -1,4 +1,4 @@
-import { User } from './user';
+import { User } from './User';
 import { Question } from './Question';
 import { UserType } from './UserType';
 import { Estado } from './enums/Estado';

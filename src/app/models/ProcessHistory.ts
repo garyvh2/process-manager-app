@@ -1,5 +1,5 @@
-import { User } from './user';
-import { Task } from './Task';
+import { User } from "./User";
+import { Task } from "./Task";
 import { BaseEntity } from './interface/BaseEntity';
 
 export class ProcessHistory extends BaseEntity {

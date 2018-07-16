@@ -12,6 +12,7 @@ import { ModalModule } from 'ngx-bootstrap/modal';
 import { SharedModule } from './shared/shared.module';
 
 import { Ng2SmartTableModule } from 'ng2-smart-table';
+import { AngularFontAwesomeModule } from 'angular-font-awesome';
 
 
 
@@ -25,6 +26,7 @@ import { Ng2SmartTableModule } from 'ng2-smart-table';
     Ng2SmartTableModule,
     HttpClientModule,
 
+    AngularFontAwesomeModule,
     BsDropdownModule.forRoot(),
     TooltipModule.forRoot(),
     ModalModule.forRoot(),
