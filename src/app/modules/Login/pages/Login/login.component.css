@@ -1,0 +1,49 @@
+body {
+  background: #e9e9e9;
+  width: 100vw;
+  height: 100vh;
+  font-family: 'Lato', sans-serif;
+}
+
+.log-head {
+  border: none;
+  background: initial;
+  text-align: center;
+  padding: 25px;
+}
+
+.log-links {
+  background: initial;
+  text-align: center;
+}
+
+.log-body > * {
+  text-align: center;
+}
+
+.log-container {
+  width: 500px;
+  display: block;
+  margin: 0 auto;
+  top: 50%;
+  transform: translateY(-50%);
+}
+
+.log-send {
+  width: 100%;
+  height: 60px;
+  border: none;
+  background-image: linear-gradient(120deg, #AA6DE4 0%, #4098ED 100%);
+}
+
+.log-send:active {
+  background-image: linear-gradient(120deg, #C696F4 0%, #66B0F8 100%) !important;
+}
+
+.center-log{
+  margin: 25%;
+}
+
+footer{
+  margin: -20%;
+}

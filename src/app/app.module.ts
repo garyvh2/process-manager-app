@@ -5,6 +5,7 @@ import { HttpClientModule } from '@angular/common/http';
 
 import { AppComponent } from './app.component';
 import { UsersModule } from './modules/Users/Users.module';
+import { LoginModule } from './modules/Login/Login.module';
 import { ModuleRouting } from './app.router';
 
 import { BsDropdownModule } from 'ngx-bootstrap/dropdown';
@@ -35,7 +36,7 @@ import { AngularFontAwesomeModule } from 'angular-font-awesome';
 
     UsersModule,
     SharedModule,
-
+    LoginModule,
 
     ModuleRouting
   ],

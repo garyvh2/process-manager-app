@@ -1,7 +1,7 @@
 import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
 import { UsersModule } from './modules/Users/Users.module';
-
+import { LoginModule } from './modules/Login/Login.module';
 // >> Routes
 const MAP_ROUTES: Routes = [
   {
@@ -11,6 +11,10 @@ const MAP_ROUTES: Routes = [
   {
     path: '**',
     redirectTo: ''
+  },
+  {
+    path: '',
+    loadChildren: () => LoginModule
   }
 ];
 
