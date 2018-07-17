@@ -1,9 +1,17 @@
 import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
+import { UsersModule } from './modules/Users/Users.module';
 
 // >> Routes
-export const MAP_ROUTES: Routes = [
-    { path: 'Users', loadChildren: './modules/Users/Users.router#UsersRouterModule'},
+const MAP_ROUTES: Routes = [
+  {
+    path: 'Users',
+    loadChildren: () => UsersModule
+  },
+  {
+    path: '**',
+    redirectTo: ''
+  }
 ];
 
 @NgModule({
