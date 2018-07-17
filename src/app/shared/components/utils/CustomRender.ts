@@ -1,6 +1,7 @@
-
 import { Component, Input, OnInit } from '@angular/core';
 import { ViewCell } from 'ng2-smart-table';
+import { HumanizeFactory } from './humanize/HumanizeFactory';
+import { Humanizer } from "./humanize/Humanizer";
 
 
 @Component({
@@ -13,8 +14,8 @@ export class CustomRenderComponent implements ViewCell, OnInit {
   @Input() rowData: any;
 
   ngOnInit() {
-    let object: any[] = JSON.parse(this.value);
-    this.renderValue = object.join(', ').trim();
+    let humanizer: Humanizer = (new HumanizeFactory()).create(this.value.constructor.name)
+    this.renderValue = humanizer.process(this.value);
   }
 
 }

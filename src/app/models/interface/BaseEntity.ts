@@ -1,2 +1,2 @@
-export class BaseEntity {
+export abstract class BaseEntity {
 }
