@@ -12,25 +12,24 @@ export class ConnService {
 
   }
 
-  getAll (type): Observable<any> {
-    return this.HTTP.get(AppSettings.API_LOCATION + type);
+  getAll (params): Observable<any> {
+    return this.HTTP.get(AppSettings.API_LOCATION + params.endpoint);
   }
 
-  find (type) {
-    return this.HTTP.get(AppSettings.API_LOCATION + type);
-
+  find (params): Observable<any> {
+    return null;
   }
 
-  create () {
-
+  create (params): Observable<any> {
+    return this.HTTP.post(AppSettings.API_LOCATION + params.endpoint, params.obj);
   }
 
-  update () {
-
+  update (params): Observable<any> {
+    return this.HTTP.put(AppSettings.API_LOCATION + params.endpoint, params.obj);
   }
 
-  delete () {
-
+  delete (params): Observable<any> {
+    return this.HTTP.delete(AppSettings.API_LOCATION + params.endpoint);
   }
 
 }
