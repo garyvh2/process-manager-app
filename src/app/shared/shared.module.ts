@@ -4,6 +4,12 @@ import { HeaderComponent } from './components/header/header';
 import { FooterComponent } from './components/footer/footer';
 import { CustomRenderComponent } from './components/utils/CustomRender';
 
+const SHARED_MODULES = [
+  HeaderComponent,
+  FooterComponent,
+  CustomRenderComponent
+]
+
 @NgModule({
   imports: [
     CommonModule
@@ -12,9 +18,10 @@ import { CustomRenderComponent } from './components/utils/CustomRender';
     CustomRenderComponent
   ],
   declarations: [
-    HeaderComponent,
-    FooterComponent,
-    CustomRenderComponent
+    ...SHARED_MODULES
+  ],
+  exports: [
+    ...SHARED_MODULES
   ],
   providers: []
 })

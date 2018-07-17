@@ -3,7 +3,7 @@ import { RouterModule, Routes } from '@angular/router';
 import { UsersComponent } from './pages/Users/users.component';
 
 export const MAP_ROUTES: Routes = [
-    { path: '', component: UsersComponent }
+    { path: 'Users/List', component: UsersComponent }
 ];
 
 @NgModule({

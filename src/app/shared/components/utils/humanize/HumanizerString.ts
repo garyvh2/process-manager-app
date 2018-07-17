@@ -1,4 +1,4 @@
-import humanizeString = require("humanize-string");
+import * as humanizeString from "humanize-string";;
 import { Humanizer } from "./Humanizer";
 
 export class HumanizeString implements Humanizer {

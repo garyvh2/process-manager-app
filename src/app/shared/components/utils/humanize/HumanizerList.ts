@@ -1,4 +1,4 @@
-import humanizeList = require("humanize-list");
+import * as humanizeList from "humanize-list";
 import { Humanizer } from "./Humanizer";
 
 export class HumanizeList implements Humanizer {
