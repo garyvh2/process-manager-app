@@ -2,8 +2,9 @@ import { User } from './User';
 import { Question } from './Question';
 import { UserType } from './UserType';
 import { Estado } from './enums/Estado';
+import { BaseEntity } from './interface/BaseEntity';
 
-export class Task {
+export class Task extends BaseEntity {
     constructor (
         public asignee:     User,
         public description: String,
@@ -11,6 +12,6 @@ export class Task {
         public userGroup:   UserType,
         public taskStatus:  Estado
     ) {
-
+      super();
     }
 }
