@@ -15,13 +15,17 @@ export class UsersComponent implements OnInit {
   constructor(private ConnService: ConnService) { }
 
   ngOnInit() {
-
-    this.ConnService.getAll({
+    this.ConnService.getAll<User[]>({
       endpoint: "User",
-    }).subscribe((data: User[]) => {
-      this.users = data;
-      this.settings = ColumnGenerator.generate(this.users[0]);
-    });
+    }).subscribe(
+      data => {
+        this.users = data;
+        this.settings = ColumnGenerator.generate(this.users[0]);
+      },
+      error => {
+        console.log(error);
+      }
+    );
   }
 
 }
