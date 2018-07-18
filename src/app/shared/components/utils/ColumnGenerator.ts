@@ -1,17 +1,17 @@
 import { BaseEntity } from "../../../models/interface/BaseEntity";
-import { chain, keys } from "underscore";
+import { chain, without, keys } from "underscore";
 import { CustomRenderComponent } from "./CustomRender";
 import { Humanizer } from "./humanize/Humanizer";
 import { HumanizeFactory } from "./humanize/HumanizeFactory";
 
 export class ColumnGenerator {
-    constructor () {}
+    constructor() { }
 
-    public static generate(object: BaseEntity): Object {
-        const PROPERTIES = keys(object);       
+    public static generate(object: BaseEntity, omit: string[] = []): Object {
+        const PROPERTIES = without.apply(null, [keys(object), ...omit]);
         const TitleHumanizer = (new HumanizeFactory()).create("String");
 
-        let settings = chain(PROPERTIES)
+        let columns = chain(PROPERTIES)
             .map(EL => {
                 return {
                     id: EL,
@@ -23,6 +23,6 @@ export class ColumnGenerator {
             .indexBy(EL => EL.id)
             .value();
 
-        return settings;
+        return columns;
     }
 }
