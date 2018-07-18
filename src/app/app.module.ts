@@ -24,7 +24,6 @@ import { AngularFontAwesomeModule } from 'angular-font-awesome';
   ],
   imports: [
     BrowserModule,
-    Ng2SmartTableModule,
     HttpClientModule,
     FormsModule,
 
