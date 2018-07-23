@@ -1,5 +1,5 @@
 <div class="log-container card mb-3 center-log">
-  <div class="log-head card-header"><img src="http://www.ieguild.com/wp-content/uploads/2016/01/process.png" alt="logoEventory"></div>
+  <div class="log-head card-header"><img src="../../../../../assets/images/procesos.png" alt="logoEventory"></div>
       <div class="log-body card-body">
           <h4 class="card-title">Login</h4>
               <div class="form-group">
@@ -17,104 +17,10 @@
                                   <i class="fa fa-lock" aria-hidden="true"></i>
                               </span>
                           </div>
-                          <input type="password" class="form-control" aria-label="Enter the password" id="cachePassword" name="cachePassword">
+                          <input type="password" class="form-control" aria-label="Enter the password" id="password" name="cachePassword">
                       </div>
                   </div>
               </div>
-          <input type="button" class="log-send btn btn-primary" id="loginButton" value="Iniciar ahora!" >
+          <input type="button" class="log-send btn btn-primary" id="loginButton" value="Iniciar ahora!"  (click)="loginFunc()" >
       </div>
 </div>
-<script>
-  var api= (function() {
-
-function Login() {
-    var inputPassword = $("#cachePassword");
-    if (!ValidateInput(inputPassword)) {
-        alert("Please enter a valid value.");
-        return;
-    }
-    ValidatePassord(inputPassword.val());
-}
-
-function ValidatePassord(password) {
-    $.ajax({
-        url: "/refreshcache/login",
-        data: { password: password }
-    }).done(function(response) {
-        if (!response)
-            alert("Error!, Wrong Password.");
-        else {
-            setCookie("CacheLogin", true, 24);
-            Redirect();
-        }
-    });
-}
-
-function setCookie(cname, cvalue, exdays) {
-    var day = new Date();
-    day.setTime(day.getTime() + (exdays * 24 * 60 * 60 * 1000));
-    var expires = "expires=" + day.toUTCString();
-    document.cookie = cname + "=" + cvalue + ";" + expires + ";path=/";
-};
-
- function getCookie(cname) {
-    var name = cname + "=";
-    var decodedCookie = decodeURIComponent(document.cookie);
-    var ca = decodedCookie.split(';');
-    for (var i = 0; i < ca.length; i++) {
-        var c = ca[i];
-        while (c.charAt(0) === ' ') {
-            c = c.substring(1);
-        }
-        if (c.indexOf(name) === 0) {
-            return c.substring(name.length, c.length);
-        }
-    }
-     return "";
-};
-
-function AlreadyIn() {
-    if (getCookie("CacheLogin"))
-        Redirect();
-}
-
-function Redirect() {
-    window.location.href = "/RefreshCache/CacheStorage";
-}
-
-function ValidateInput(input) {
-    return input.val() !== "";
-}
-
-return {
-    AccessCache: function() {
-        Login();
-    }
-};
-
-}
-)();
-
-$(document).ready(function() {
-
-window.alert = function(message) {
-    var container = $(".text");
-    container.empty();
-    container.append(message);
-    $(".modal").modal("show");
-};
-
-$("#loginButton").click(apiRefreshCache.AccessCache);
-
-$('#cachePassword').keypress(function (e) {
-    var key = e.which;
-    if (key === 13)  // the enter key code
-    {
-        $("#loginButton").click();
-        return false;
-    }
-});
-
-
-});
-</script>
