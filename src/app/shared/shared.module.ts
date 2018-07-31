@@ -4,6 +4,8 @@ import { HeaderComponent } from './components/header/header';
 import { FooterComponent } from './components/footer/footer';
 import { CustomRenderComponent } from './components/utils/CustomRender';
 import { ConnService } from './providers/database.service';
+import { TooltipModule } from 'ng2-tooltip-directive';
+
 
 const SHARED_MODULES = [
   HeaderComponent,
@@ -13,7 +15,8 @@ const SHARED_MODULES = [
 
 @NgModule({
   imports: [
-    CommonModule
+    CommonModule,
+    TooltipModule
   ],
   entryComponents: [
     CustomRenderComponent
