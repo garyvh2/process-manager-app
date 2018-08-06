@@ -1,0 +1,17 @@
+.dynamic-form *:focus {
+  border: 1px solid rgba(0, 0, 0, 0.4);
+  box-shadow: 0 0 3px rgba(0, 0, 0, 0.3);
+}
+
+:host .dynamic-field {
+  margin-bottom: 15px;
+}
+
+:host .dynamic-field label {
+  display: block;
+  font-size: 16px;
+  font-weight: 400;
+  letter-spacing: 0px;
+  margin-bottom: 10px;
+  color: rgba(0, 0, 0, 0.9);
+}

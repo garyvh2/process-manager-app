@@ -13,11 +13,11 @@ export class UsersTypesComponent implements OnInit {
   settings: Object;
   usertypes: UserType[];
 
-  constructor(private ConnService: ConnService) { }
+  constructor(private ConnServ: ConnService) { }
 
   ngOnInit() {
-    this.ConnService.getAll<UserType[]>({
-      endpoint: "usertypes",
+    this.ConnServ.getAll<UserType[]>({
+      endpoint: 'usertypes',
     }).subscribe(
       data => {
         this.settings = {

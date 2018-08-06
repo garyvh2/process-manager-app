@@ -1,12 +1,4 @@
-<label for="{{model_name}}" class="control-label -#Bootstrap_Classes-">
-    {{ title }} <span *ngIf="tooltip" tooltip="tooltip" placement="top" show-delay="500">
-                    <i class='fas fa-info-circle'></i>
-                </span>
-</label>
-<input  id="{{model_name}}"
-        [(ngModel)]="value"
-        name="{{model_name}}"
-        type="{{kind}}"
-        class="form-control"
-        placeholder="{{placeholder}}"
-        value="{{value}}">
+<div class='dynamic-field form-input form-group' [formGroup]='group'>
+  <label class="control-label">{{ config.label }}</label>
+  <input class="form-control" type='text' [attr.placeholder]='config.placeholder' [formControlName]='config.name' />
+</div>

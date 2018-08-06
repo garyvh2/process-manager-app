@@ -1,23 +1,15 @@
-import { Component, OnInit, Input } from '@angular/core';
-import { NG_VALUE_ACCESSOR } from '../../../../../../node_modules/@angular/forms';
+import { FieldConfig } from './../../../../models/interface/FieldConfig';
+import { Component, ViewContainerRef } from '@angular/core';
+import { FormGroup } from '@angular/forms';
+import { Field } from '../../../../models/interface/Field';
 
+// @ts-ignore
 @Component({
-    selector: 'app-input',
-    templateUrl: 'input.component.html',
-    providers: [{
-        provide: NG_VALUE_ACCESSOR,
-        useExisting: InputComponent,
-        multi: true
-    }]
+  selector: 'app-form-input',
+  templateUrl: './input.component.html',
+  styleUrls: ['./input.component.css']
 })
-
-export class InputComponent implements OnInit {
-    @Input() title: String;
-    @Input() tooltip: String;
-    @Input() model_name: String;
-
-
-    constructor() { }
-
-    ngOnInit() { }
+export class FormInputComponent implements Field {
+  config: FieldConfig;
+  group: FormGroup;
 }

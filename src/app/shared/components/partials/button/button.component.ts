@@ -1,12 +1,15 @@
-import { Component, OnInit } from '@angular/core';
+import { FieldConfig } from './../../../../models/interface/FieldConfig';
+import { Field } from './../../../../models/interface/Field';
+import { Component } from '@angular/core';
+import { FormGroup } from '@angular/forms';
 
+// @ts-ignore
 @Component({
-    selector: 'app-button',
-    templateUrl: 'button.component.html'
+  selector: 'app-form-button',
+  templateUrl: './button.component.html',
+  styleUrls: ['./button.component.css']
 })
-
-export class ButtonComponent implements OnInit {
-    constructor() { }
-
-    ngOnInit() { }
+export class FormButtonComponent implements Field {
+  config: FieldConfig;
+  group: FormGroup;
 }

@@ -1,3 +1,4 @@
+import { TaskModule } from './modules/Task/Task.module';
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
 import { FormsModule } from '@angular/forms';
@@ -13,7 +14,6 @@ import { TooltipModule } from 'ngx-bootstrap/tooltip';
 import { ModalModule } from 'ngx-bootstrap/modal';
 import { SharedModule } from './shared/shared.module';
 
-import { Ng2SmartTableModule } from 'ng2-smart-table';
 import { AngularFontAwesomeModule } from 'angular-font-awesome';
 
 
@@ -32,9 +32,9 @@ import { AngularFontAwesomeModule } from 'angular-font-awesome';
     TooltipModule.forRoot(),
     ModalModule.forRoot(),
 
-
-    UsersModule,
     SharedModule,
+    UsersModule,
+    TaskModule,
     LoginModule,
 
     ModuleRouting
