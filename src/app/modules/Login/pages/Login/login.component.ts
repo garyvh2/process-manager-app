@@ -1,6 +1,7 @@
+import { ConnService } from './../../../../shared/providers/database.service';
+import { User } from './../../../../models/User';
 import { Component, OnInit } from '@angular/core';
 import * as $ from 'jquery';
-import { ConnService } from '../../../../shared/providers/database.service';
 
 @Component({
   selector: 'app-login',
@@ -9,31 +10,31 @@ import { ConnService } from '../../../../shared/providers/database.service';
 })
 export class LoginComponent implements OnInit {
 
-  constructor(private ConnService: ConnService) { }
+  constructor(private ConnServ: ConnService) { }
 
   ngOnInit() {
   }
 
-  loginFunc () {
-    let userName = $('#userName').val();
-    let password = $('#password').val();
-    if(!this.isValid(userName,password)){
-      alert("Complete los campos requeridos");
+  loginFunc() {
+    const userName = $('#userName').val();
+    const password = $('#password').val();
+    if (!this.isValid(userName, password)) {
+      alert('Complete los campos requeridos');
       return;
     }
     this.sendRequest(userName, password);
-    console.log("Jose");
+    console.log('Jose');
   }
 
   isValid(userName, password) {
     return userName !== '' && password !== '';
   }
 
-  sendRequest(userName, password){
-    this.ConnService.create<User>({
-      endpoint: "users/authenticateUser",
-      obj :{
-        userEmail : userName,
+  sendRequest(userName, password) {
+    this.ConnServ.create<User>({
+      endpoint: 'users/authenticateUser',
+      obj: {
+        userEmail: userName,
         userPassword: password
       }
     }).subscribe(

@@ -25,7 +25,7 @@ export class DynamicFormComponent implements OnInit {
 
   createGroup() {
     const group = this.fb.group({});
-    this.config.forEach(control => group.addControl(control.name, this.fb.control()));
+    // this.config.forEach(control => group.addControl(control.name, this.fb.control()));
     return group;
   }
 }
