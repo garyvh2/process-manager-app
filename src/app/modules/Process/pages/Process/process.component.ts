@@ -1,8 +1,8 @@
+import { Process } from './../../../../models/Process';
 import { Component, OnInit } from '@angular/core';
-import { User } from '../../../../models/User';
 import { ColumnGenerator } from '../../../../shared/components/utils/ColumnGenerator';
 import { ConnService } from '../../../../shared/providers/database.service';
-import { UserType } from '../../../../models/UserType';
+
 
 @Component({
   selector: 'app-process',
@@ -12,25 +12,30 @@ import { UserType } from '../../../../models/UserType';
 
 export class ProcessComponent implements OnInit {
   settings: Object;
-  usertypes: UserType[];
+  processes: Process[];
+
 
   constructor(private ConnServ: ConnService) { }
 
   ngOnInit() {
-    this.ConnServ.getAll<UserType[]>({
-      endpoint: 'usertypes',
+    this.ConnServ.getAll<Process[]>({
+      endpoint: 'processes/getAll',
     }).subscribe(
       data => {
         this.settings = {
-          actions: false,
+          actions: true,
           columns: ColumnGenerator.generate(data[0])
         };
-        this.usertypes = data;
+        this.processes = data;
       },
       error => {
         console.log(error);
       }
     );
+  }
+
+  getUser() {
+    return localStorage.getItem('UserLogged');
   }
 
 }
