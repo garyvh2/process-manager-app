@@ -49,6 +49,7 @@ export class LoginComponent implements OnInit {
 
   saveInLocalStorage(obj) {
     localStorage.setItem('UserLogged', JSON.stringify(obj));
+    window.location.href = '/Process/List';
   }
 
 }

@@ -3,8 +3,13 @@ import { RouterModule, Routes } from '@angular/router';
 import { UsersModule } from './modules/Users/Users.module';
 import { LoginModule } from './modules/Login/Login.module';
 import { TaskModule } from './modules/Task/Task.module';
+import { ProcessModule } from './modules/Process/Process.module';
 // >> Routes
 const MAP_ROUTES: Routes = [
+  {
+    path: 'Process',
+    loadChildren: () => ProcessModule
+  },
   {
     path: 'Users',
     loadChildren: () => UsersModule
