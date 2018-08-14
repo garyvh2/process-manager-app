@@ -1,0 +1,15 @@
+<ng2-smart-table [settings]="settings" [source]="data" (userRowSelect)="onUserRowSelect($event)"></ng2-smart-table>
+
+<div class="card border-secondary" style="margin-top: 50px;">
+  <div class="card-header">
+    {{ title }}
+  </div>
+
+  <div class="card-header card-subheader">
+
+  </div>
+  <div class="card-body">
+    <app-dynamic-form [config]="config" #form="dynamicForm" (submit)="submit($event)">
+    </app-dynamic-form>
+  </div>
+</div>

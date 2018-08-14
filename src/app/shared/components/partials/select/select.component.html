@@ -2,8 +2,8 @@
   <label>{{ config.label }}</label>
   <select class="form-control" [formControlName]="config.name">
     <option value="">{{ config.placeholder }}</option>
-    <option *ngFor="let option of config.options">
-      {{ option }}
+    <option *ngFor="let option of config.options" [ngValue]="option">
+      {{ config.selectName ? option[config.selectName] : option }}
     </option>
   </select>
 </div>

@@ -1,3 +1,4 @@
+import { QuestionComponent } from './pages/Question/question.component';
 import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
 import { UsersComponent } from './pages/Users/users.component';
@@ -5,12 +6,16 @@ import { UsersTypesComponent } from './pages/UsersType/userstype.component';
 
 const MAP_ROUTES: Routes = [
   {
-    path: 'List',
+    path: 'Users',
     component: UsersComponent
   },
   {
-    path: 'Types',
+    path: 'UserTypes',
     component: UsersTypesComponent
+  },
+  {
+    path: 'Questions',
+    component: QuestionComponent
   }
 ];
 
@@ -22,4 +27,4 @@ const MAP_ROUTES: Routes = [
     RouterModule
   ]
 })
-export class UsersRouterModule { }
+export class CRUDRouterModule { }

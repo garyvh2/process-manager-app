@@ -1,13 +1,13 @@
+import { CRUDModule } from './modules/CRUD/CRUD.module';
 import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
-import { UsersModule } from './modules/Users/Users.module';
 import { LoginModule } from './modules/Login/Login.module';
 import { TaskModule } from './modules/Task/Task.module';
 // >> Routes
 const MAP_ROUTES: Routes = [
   {
-    path: 'Users',
-    loadChildren: () => UsersModule
+    path: 'CRUD',
+    loadChildren: () => CRUDModule
   },
   {
     path: 'Tasks',

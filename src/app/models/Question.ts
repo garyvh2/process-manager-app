@@ -2,10 +2,11 @@ import { BaseEntity } from './interface/BaseEntity';
 
 export class Question extends BaseEntity {
     constructor (
-        public questionText:    String,
-        public type:            String,
-        public AnswersToSelect: String[],
-        public UserAnswer:      String
+      public name: string,
+      public label?: string,
+      public options?: string[],
+      public placeholder?: string,
+      public value?: any
     ) {
       super();
     }

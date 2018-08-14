@@ -1,3 +1,4 @@
+import { ConnService } from './../providers/database.service';
 import { FieldConfig } from './../../models/interface/FieldConfig';
 import { Field } from './../../models/interface/Field';
 import { FormSelectComponent } from './../components/partials/select/select.component';
@@ -30,8 +31,9 @@ export class DynamicFieldDirective implements Field, OnChanges, OnInit {
 
   constructor(
     private resolver: ComponentFactoryResolver,
-    private container: ViewContainerRef
-  ) {}
+    private container: ViewContainerRef,
+    private ConnServ: ConnService
+  ) { }
 
   ngOnChanges() {
     if (this.component) {
@@ -48,9 +50,34 @@ export class DynamicFieldDirective implements Field, OnChanges, OnInit {
         Supported types: ${supportedTypes}`
       );
     }
+    if (this.config.type === 'select' &&
+      this.config.endpoint &&
+      !this.config.options) {
+      this.getOptions(this.config.endpoint)
+        .subscribe(
+          data => {
+            this.config.options = data;
+            this.resolveComponent();
+          },
+          error => {
+            console.log(error);
+          }
+        );
+    } else {
+      this.resolveComponent();
+    }
+
+
+  }
+
+  resolveComponent() {
     const component = this.resolver.resolveComponentFactory<Field>(COMPONENTS[this.config.type]);
     this.component = this.container.createComponent(component);
     this.component.instance.config = this.config;
     this.component.instance.group = this.group;
+  }
+
+  getOptions(endpoint) {
+    return this.ConnServ.getAll<any[]>({ endpoint });
   }
 }
