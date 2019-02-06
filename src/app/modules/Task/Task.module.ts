@@ -1,3 +1,4 @@
+import { Ng2SmartTableModule } from 'ng2-smart-table';
 import { CommonModule } from '@angular/common';
 import { NgModule } from '@angular/core';
 import { TaskRouterModule } from './Task.router';
@@ -9,6 +10,7 @@ import { TaskService } from './Task.service';
 @NgModule({
   imports: [
     CommonModule,
+    Ng2SmartTableModule,
     DynamicFormModule,
     TaskRouterModule
   ],

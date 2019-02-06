@@ -5,7 +5,6 @@ import { FormsModule } from '@angular/forms';
 import { HttpClientModule } from '@angular/common/http';
 
 import { AppComponent } from './app.component';
-import { UsersModule } from './modules/Users/Users.module';
 import { LoginModule } from './modules/Login/Login.module';
 import { ModuleRouting } from './app.router';
 
@@ -15,6 +14,7 @@ import { ModalModule } from 'ngx-bootstrap/modal';
 import { SharedModule } from './shared/shared.module';
 
 import { AngularFontAwesomeModule } from 'angular-font-awesome';
+import { CRUDModule } from './modules/CRUD/CRUD.module';
 
 
 
@@ -33,7 +33,7 @@ import { AngularFontAwesomeModule } from 'angular-font-awesome';
     ModalModule.forRoot(),
 
     SharedModule,
-    UsersModule,
+    CRUDModule,
     TaskModule,
     LoginModule,
 
