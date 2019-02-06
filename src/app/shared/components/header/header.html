@@ -1,0 +1,64 @@
+<header>
+    <div id="menu-container">
+        <div id="head" class="animated">
+            <div id="menu-opener">
+                <i class="fas fa-bars"></i>
+            </div>
+            <ul id="head-buttons">
+                <a onclick="ltl.go.home();" href="#">
+                    <li class="head-button">
+                        <i class="head-button-icon fas fa-lg fa-home"></i>
+                    </li>
+                </a>
+                <a id="log_out" href="#">
+                    <li class="head-button float-right">
+                        <i class="head-button-icon fas fa-lg fa-sign-out-alt"></i>
+                    </li>
+                </a>
+                <a href="#">
+                    <li class="head-button float-right">
+                        <i class="head-button-icon fas fa-lg fa-cog"></i>
+                    </li>
+                </a>
+            </ul>
+        </div>
+        <div id="drawing" class="animated">
+            <ul id="drawing-list" align="center">
+                <a href="/CRUD/Users">
+                    <li class="drawing-list-item">
+                        <span class="drawing-icon">
+                            <i class='fas fa-users'></i>
+                        </span>
+                        <span class="drawing-text">
+                            <p id="users_item">Users</p>
+                        </span>
+                    </li>
+                </a>
+                <a href="/CRUD/UserTypes">
+                    <li class="drawing-list-item">
+                        <span class="drawing-icon">
+                            <i class='fas fa-list-ul'></i>
+                        </span>
+                        <span class="drawing-text">
+                            <p id="users_type_item">Users Types</p>
+                        </span>
+                    </li>
+                </a>
+                <a href="/Tasks/View">
+                    <li class="drawing-list-item">
+                        <span class="drawing-icon">
+                            <i class='fas fa-tasks'></i>
+                        </span>
+                        <span class="drawing-text">
+                            <p id="users_type_item">Tasks</p>
+                        </span>
+                    </li>
+                </a>
+            </ul>
+        </div>
+        <div id="expand-list">
+            <i class="fas fa-ellipsis-h"></i>
+            <i class="fas fa-times"></i>
+        </div>
+    </div>
+</header>
